@@ -162,7 +162,7 @@ public class TapTargetView extends View {
     final ViewGroup decor = (ViewGroup) activity.getWindow().getDecorView();
     final ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(
         ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-    final ViewGroup content = (ViewGroup) decor.findViewById(android.R.id.content);
+    final ViewGroup content = (ViewGroup) ((ViewGroup) decor.findViewById(android.R.id.content)).getChildAt(0);
     final TapTargetView tapTargetView = new TapTargetView(activity, decor, content, target, listener);
     decor.addView(tapTargetView, layoutParams);
 
